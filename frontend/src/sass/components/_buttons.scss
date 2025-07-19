@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// Botones reutilizables
+.button-primary {
+    @include m.button-style(v.$primary-color, white);
+    margin-top: 20%;
+    margin-left: 70%;
+    padding: 5%;
+    font-size: 5ch;
+    z-index: 8000
+
+}
+
+%button-close {
+    @include m.button-style(transparent, white);
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    padding: 0;
+    font-size: 2rem;
+
+    &:hover {
+        color: red;
+        background-color: transparent;
+    }
+}
+
+%button-header{
+    @include m.button-style(transparent, v.$text-color);
+    position: absolute; // Posiciona el botón de manera absoluta respecto al header
+    margin: auto; // Centra el botón si es necesario
+    color: black; // Define el color del texto en negro
+    border: none; // Establece un borde de 2px en color naranja
+    border-radius: 5px; // Redondea ligeramente las esquinas del botón
+    font-size: 1rem; // Define el tamaño del texto en 1rem
+    cursor: pointer; // Cambia el cursor a "mano" cuando se pasa sobre el botón
+
+    display: flex; // Usa flexbox para alinear el contenido del botón
+    align-items: center; // Centra el contenido verticalmente dentro del botón
+
+    white-space: nowrap; // Evita que el texto se divida en varias líneas
+    transition: background 0.3s, transform 0.3s; // Aplica una animación en cambios de color y transformación
+
+    &:hover { // Estilos cuando el usuario pasa el cursor sobre el botón
+        transform: scale(1.05); // Aumenta ligeramente el tamaño del botón
+    }
+
+    &:active { // Estilos cuando el usuario presiona el botón
+        transform: scale(0.98); // Reduce el tamaño del botón para dar efecto de "presionado"
+    }
+
+}
+

@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// Estilos para tarjetas reutilizables
+%card-modal{
+    @include m.card-style(transparent, white);
+    border: none;
+   
+    .title {
+        font-size: 3rem; // Ajusta el tamaño según sea necesario
+        color: v.$primary-color;   
+    }
+
+    .paragraph {
+        margin-top: 30px;
+        font-size: 1rem; // Define un tamaño de fuente adecuado
+        line-height: 1.5; // Mejora la legibilidad
+    }
+}
+
+
+// Estilos para tarjetas reutilizables
+%card-checkbox{
+    @include m.card-style(transparent, white);
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .paragraph {
+        margin-top: 30px;
+        font-size: 1rem; // Define un tamaño de fuente adecuado
+        line-height: 1.5; // Mejora la legibilidad
+        padding: 2rem;
+    }
+    .checkbox {
+        @include m.card-style(transparent, white);
+        width: 20px;
+        height: 20px;
+        padding: 2rem;
+        background-color: transparent;
+        border: none;
+
+    }
+}
+
+
+
+.card-submit {
+    @include m.card-style(v.$background-color, white);
+    margin-top: 80px;
+    position: fixed;
+    right: 200px;
+
+    width: 800px;
+    height: 100px;
+    
+
+    .paragraph {
+        padding: 10px;
+        font-size: 1rem; // Define un tamaño de fuente adecuado
+        line-height: 1.5; // Mejora la legibilidad
+        max-width: 800px;
+    }
+
+    .button {
+        @include m.button-style(v.$primary-color, white);
+        position: absolute;
+        right: -150px;
+        bottom: -50px;
+        padding: 30px;
+    }
+}

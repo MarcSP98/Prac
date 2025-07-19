@@ -1,0 +1,42 @@
+@use "sass:color";
+
+@use 'variables' as v;
+
+// Mixins reutilizables
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-end {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+ 
+@mixin responsive($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin button-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: color.adjust($bg-color, $lightness: -20%);
+    }
+}
+
+@mixin card-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border-radius: 5px;
+    padding: 1%;
+}

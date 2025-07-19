@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use "sass:color";
+@use "../vendors/index"; // ✅ Importar Bootstrap correctamente
+
+%form-container {
+    position:relative;
+    background-color: v.$background-color;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    .form-grid {
+        @extend .row;
+    }
+
+    .column-half {
+        @extend .col-md-6;
+    }
+
+    .input-field {
+        @extend .form-control;
+        margin-bottom: 1rem;
+    }
+
+    .form-header {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        height: 40px;
+    }
+
+    .form-button {
+        @include m.button-style(v.$primary-color, white);
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .form-message {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 10px;
+        height: 100px;
+        color: black;
+    }
+}

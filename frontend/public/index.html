@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vehículos</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Compilación del SCSS -->
+    <script type="module" src="./js/main.js"></script>
+</head>
+<body class="home"> <!-- Tema por defecto -->
+
+    <!-- Cabecera con botón de cambio de tema -->
+    <header id="header" class="header">
+        <button id="toggleThemeBtn" class="theme-toggle"></button>
+        <button id="toggleHeaderBtn" class="toggle-header"></button>
+    </header>
+    
+    <div class="card-submit">
+        <p class="paragraph">
+            Haz clic en el botón "Registrar Vehículo" para añadir un nuevo vehículo al sistema. 
+            Asegúrate de ingresar correctamente todos los datos requeridos, como la matrícula, marca, modelo y año de fabricación.
+        </p>
+        <button id="openModalRegisterBtn" class="button">Registrar Vehículo</button>
+    </div>
+
+    <!-- Contenedor principal del Modal -->
+    <div id="modalRegister" class="modal"> 
+        <button id="closeModalRegisterBtn" class="close-modal">&times;</button> <!-- Botón de cierre -->
+
+        <div class="modal-content"> <!-- Asegura alineación horizontal -->
+            
+            <!-- Sección informativa -->
+            <div class="card-modal">
+                <h1 class="title">Registro de Vehículos</h1>
+                <h2 class="paragraph">
+                    Al registrar tu vehículo, aceptas proporcionar información veraz y mantener actualizados tus datos. 
+                    Nos comprometemos a proteger tu privacidad y utilizar la información solo para la gestión del registro 
+                    y cumplimiento legal. Puedes solicitar la modificación o eliminación de tus datos cuando lo necesites.
+                </h2>
+                <br><br>
+                <div class="card-checkbox">
+                    <input type="checkbox" id="termsCheckbox" class="checkbox" required>
+                    <h2 class="paragraph">
+                        He leído y acepto los términos y condiciones del registro de vehículos.
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Formulario de registro -->
+            <form id="vehicleForm" class="form">
+                <h1 class="form-header">Registrar Vehículo</h1>
+            
+                <div class="form-grid">
+                    <div class="column-half">
+                        <label for="brand">Marca:</label>
+                        <input type="text" id="brand" class="input-field" placeholder="Ejemplo: Toyota" required>
+                    </div>
+            
+                    <div class="column-half">
+                        <label for="model">Modelo:</label>
+                        <input type="text" id="model" class="input-field" placeholder="Ejemplo: Corolla" required>
+                    </div>
+                </div>
+            
+                <div class="form-grid">
+                    <div class="column-half">
+                        <label for="year">Año:</label>
+                        <input type="number" id="year" class="input-field" placeholder="Ejemplo: 2022" required min="1900" max="2099">
+                    </div>
+            
+                    <div class="column-half">
+                        <label for="color">Color:</label>
+                        <input type="text" id="color" class="input-field" placeholder="Ejemplo: Azul" required>
+                    </div>
+                </div>
+            
+                <div class="form-grid">
+                    <div class="column-half">
+                        <label for="licensePlate">Matrícula:</label>
+                        <input type="text" id="licensePlate" class="input-field" placeholder="Ejemplo: 1234ABC" required>
+                    </div>
+                </div>
+            
+                <button type="button" id="saveVehicleBtn" class="form-button">Guardar Vehículo</button> 
+                <p id="form-message" class="form-message"></p> <!-- Para mostrar mensajes -->
+            </form>
+
+        </div> <!-- Cierre modal-content -->
+    </div> <!-- Cierre modalRegister -->
+
+</body>
+</html>

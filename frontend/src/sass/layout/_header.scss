@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../components/buttons' as b;
+
+.header {
+    display: flex; // Usa flexbox para organizar los elementos dentro del header
+    position: fixed; // Fija el header en la parte superior de la página, no se mueve con el scroll
+    top: 0; // Posiciona el header en la parte superior de la ventana
+    left: 0; // Asegura que el header comience desde el borde izquierdo
+    width: 100%; // Hace que el header ocupe el 100% del ancho de la pantalla
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); // Agrega una sombra para un efecto de elevación
+    z-index: 1000; // Asegura que el header quede por encima de otros elementos en la página
+    transition: height 1s ease, padding 0.3s ease; // Anima los cambios en altura y padding con suavidad
+    height: 300px; // Define una altura inicial de 300px para el header
+    
+
+    &.minimized { // Estilos aplicados cuando el header tiene la clase "minimized"
+        height: 30px; // Reduce la altura del header a 30px
+        padding: 0 1rem; // Ajusta el relleno solo a los lados, eliminando el superior e inferior
+        overflow: hidden; // Oculta cualquier contenido que sobresalga cuando está minimizado
+    }
+
+    .theme-toggle { // Estilos para el botón de cambio de tema
+        @extend %button-header;
+        top: 5px; // Se coloca 5px desde la parte superior
+        left: 5px; // Se coloca 10px desde el borde izquierdo
+        width: 130px; // Establece el ancho del botón en 150px
+        height: 20px; // Fija la altura en 20px
+
+    }
+
+    .toggle-header { // Estilos para el botón que minimiza el header
+        @extend %button-header;
+        top: 5px; // Se coloca 5px desde la parte superior
+        right: 10px; // Se coloca 10px desde el borde derecho
+        width: 10px;
+        height: 10px; // Fija la altura en 20px
+        
+    }
+}

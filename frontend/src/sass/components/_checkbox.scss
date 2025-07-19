@@ -1,0 +1,13 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // Espacio entre checkbox y label
+    margin: 1rem 0;
+
+    .input-checkbox {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}
+

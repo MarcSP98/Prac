@@ -1,0 +1,24 @@
+
+// ✅ 1. Importar Bootstrap primero
+@use "bootstrap/scss/bootstrap";
+
+// ✅ 2. Importar variables y mixins
+@use "abstracts";
+
+// ✅ 3. Importar configuraciones base
+@use "base";
+
+// ✅ 4. Importar componentes reutilizables
+@use "components";
+
+// ✅ 5. Importar layouts generales
+@use "layout";
+
+// ✅ 6. Importar estilos específicos de páginas
+@use "pages";
+
+// ✅ 7. Importar temas (modo oscuro y claro)
+@use "themes";
+
+// ✅ 8. Importar librerías externas (si hay otras aparte de Bootstrap)
+@use "vendors";

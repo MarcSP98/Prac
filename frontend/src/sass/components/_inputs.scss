@@ -1,0 +1,19 @@
+
+@use '../abstracts/variables' as v;
+
+$border-color: #bbb; // Definir color de borde si no está en variables
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background-color: v.$background-color;
+    color: v.$regular-font-color;
+
+    &:focus {
+        border-color: v.$primary-color;
+        outline: none;
+    }
+}

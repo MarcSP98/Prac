@@ -1,0 +1,59 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../components/card' as c;
+@use '../layout/form' as f;
+@use '../components/buttons' as b;
+
+.modal {
+    align-self: center;
+    align-content: center;
+    max-width: 80%;
+    max-height: 80%;
+    transform: translate(10%, 10%);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    overflow: hidden;
+    
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        z-index: 900;
+    }
+
+    .modal-content { // ✅ Nombre corregido      
+        padding: 2rem;
+        background-color: transparent;
+        border: none;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .card-modal {
+        @extend %card-modal;
+        max-width: 50%;
+        flex: 1;
+        
+        .card-checkbox {
+            @extend %card-checkbox;
+        }
+    }
+
+    .form {
+        @extend %form-container;
+        max-width: 50%;
+        flex: 1;
+    }
+    
+    .close-modal {
+        @extend %button-close;
+        z-index: 9999;
+    }
+}

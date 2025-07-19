@@ -1,0 +1,16 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "live-server public",
+    "build:sass": "sass --load-path=./node_modules src/sass/main.scss public/css/styles.css",
+    "watch:sass": "sass --watch src/sass/main.scss:public/css/styles.css"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  }
+}

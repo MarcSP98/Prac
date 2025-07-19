@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as v;
+
+.light-theme {
+    background-color: v.$light-background;
+    color: v.$light-text;
+
+    .header {
+        background-color: v.$light-background;
+    }
+    .theme-toggle {
+        background-color: v.$light-background;
+        color: v.$light-text;
+
+        &:hover {
+            background-color: v.$light-background;
+        }
+    }
+    .card-submit {
+        background-color: v.$light-background;
+        color: v.$light-text;
+    }
+
+}

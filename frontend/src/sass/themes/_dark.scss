@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as v;
+
+.dark-theme {
+    background-color: v.$dark-background;
+    color: v.$dark-text;
+    
+    .header {
+        background-color: lighten(v.$dark-background, 10%);
+    }
+
+    .theme-toggle {
+        background-color: lighten(v.$dark-background, 10%);
+        color: v.$dark-text;
+
+        &:hover {
+            background-color: lighten(v.$dark-background, 10%);
+        }
+    }
+
+    .card-submit {
+        background-color: lighten(v.$dark-background, 10%);
+        color: v.$dark-text;
+    }
+}

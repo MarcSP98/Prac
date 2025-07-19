@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// Estilos generales de la página
+body {
+    font-family: Arial, sans-serif;
+    background-color: v.$background-color;
+    color: v.$text-color;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    color: v.$primary-color;
+}
+
+
+
